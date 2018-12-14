@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/HomeMap/HomeMap",
+    "pages/commonUserQuestions/commonUserQuestions",
+    "pages/PayToCharge/PayToCharge",
+    "pages/bindPhone/bindPhone",
+    "pages/login/login",
+    "pages/myAccount/myAccount",
+    "pages/myChargeRecord/myChargeRecord",
+    "pages/coupon/coupon",
+    "pages/useProtocol/useProtocol"
+  ]
+}

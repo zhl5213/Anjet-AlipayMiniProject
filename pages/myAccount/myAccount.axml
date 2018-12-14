@@ -1,0 +1,32 @@
+<view style="width:100%;background-color: #f0eff5;">
+  <view style="width:100%;height:150px;background-color:#238CEE;">
+    <image src="/resources/myAccount/defaultAvatur.png" mode="aspectFill" 
+    style="width:{{avarturRadius}}px;height:{{avarturRadius}}px;margin-left:25px;margin-top: 17.5px;border-radius:{{avarturRadius/2}}px;"/>
+    <view style="display:inline-block;height:{{avarturRadius}}px;margin-left:10px;margin-top: 17.5px;vertical-align:top">
+      <view class="myInfo">我的名字</view>
+      <view a:if="{{phoneNumber.length > 1}}" class="myInfo">{{phoneNumber}}</view>
+      <image a:else src="/resources/HomeMap/appQuestion.png" mode="aspectFit" 
+      style=" height:50%;width:{{avarturRadius}}px;border-radius:{{avarturRadius}}/2px;" />
+    </view>
+  </view>
+  <view class="cardContainer" style="margin: 25px 25px 0px 25px;">
+    <view style="margin:8px;">     
+<list>
+  <block a:for="{{items1}}">
+    <list-item thumb="{{item.thumb}}" arrow="{{item.arrow}}" align="{{item.align}}" index="{{index}}" onClick="onGroup1ItemClick" key="items-{{index}}" last="{{index === (items.length - 1)}}">              {{item.title}}                            
+    </list-item>
+  </block>
+</list> 
+</view>
+     </view>
+     <view class="cardContainer" style="margin: 10px 25px 0px 25px;">
+      <view style="margin:8px;">
+<list>
+  <block a:for="{{items2}}">
+    <list-item thumb="{{item.thumb}}" arrow="{{item.arrow}}" align="{{item.align}}" index="{{index}}" onClick="onGroup2ItemClick" key="items-{{index}}" last="{{index === (items.length - 1)}}">              {{item.title}}                                  
+    </list-item>
+  </block>
+</list>
+      </view>
+</view>
+</view>

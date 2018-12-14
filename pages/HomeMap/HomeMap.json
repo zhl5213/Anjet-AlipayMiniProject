@@ -1,0 +1,6 @@
+{
+  "defaultTitle":"易利充",
+  "usingComponents": {
+    "popup": "mini-antui/es/popup/index"
+  }
+}

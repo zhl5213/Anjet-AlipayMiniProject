@@ -1,0 +1,7 @@
+{
+  "defaultTitle":"常见问题",
+  "usingComponents": {
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index"
+  }
+}

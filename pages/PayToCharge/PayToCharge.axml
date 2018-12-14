@@ -1,0 +1,29 @@
+<view class="backView" style="background-color:#f0eff5;">
+  <view style="background-color:white;">
+    <view class="explain text" style="margin-left: 22.5px;margin-right: 22.5px;line-height:20px">
+    <text style="font-size:16px;word-wrap:break-word;">请选择下列充电套餐进行购买。      
+    购买完成后，有效充电时限内都可以随时使用此设备进行充电。中途若自行结束充电，费用不退。
+    </text>
+    </view>
+     <view  class="section-btns" > 
+       <view class="buttonViewSpaceSide" ></view>
+       <view class="{{leftButtonViewClassName}}" onTap="leftButtonTapped" >
+         <view class="buttonViewTextTop" style="height:50% ">0.5元</view>
+         <view class="buttonViewTextBottom" style="height:50%">可充电0.5小时</view>
+       </view>
+       <view class="buttonViewSpaceCenter"></view>
+       <view class="{{rightButtonViewClassName}}" onTap="rightButtonTapped">
+      <view class="buttonViewTextTop" style="height:50% ">1元
+     </view>
+      <view class="buttonViewTextBottom" style="height:50%">可充电1小时
+      </view>
+          </view>
+       <view class="buttonViewSpaceSide">
+      </view>
+     </view>
+  </view>
+  <view style="margin-left: 22.5px; margin-top: 15px">应付金额：<text style="color: #51aef4;font-size:20px;"> ¥{{chooseAmount}}元</text></view>
+  <view class="sureButton">
+    立即支付
+  </view>
+</view>  

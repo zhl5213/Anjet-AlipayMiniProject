@@ -1,0 +1,8 @@
+<view a:if="{{record.id}}">  
+  New Page
+</view>
+<view a:else class="page">
+  <image src="/resources/coupon/noInfo.png" mode="aspectFill" style="width:160px;height:160px;margin-left:{{marginLeft}}px;margin-top: 90px;" />
+  <view class="textCenter">暂时没有相关内容
+  </view>
+</view>

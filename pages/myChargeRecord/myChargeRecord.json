@@ -1,0 +1,8 @@
+{
+  "defaultTitle":"我的充电订单",
+  "usingComponents": {
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "card": "mini-antui/es/card/index"
+  }
+}

@@ -1,0 +1,6 @@
+<view style="width:100%;">
+<image src="/resources/login/icon.png" mode="aspectFill" style="width:100px;height:135px;margin-top: 37.5px;margin-left:{{marginLeft}}" />
+<view class="sureButton" style="margin-top: 45px;" onTap="loginWithAccount">    支付宝账号登录  </view>
+<!-- <button type="default" class="sureButton" onTap="defaultTap" style="margin-top: 45px;" >支付宝账号登录</button> -->
+<view id="bottomView" style="margin-top:{{bottomViewMarginTop}}">登录即代表你同意<text style="color:blue;" onTap="bottomViewIsTapped">《anjet用户协议》</text></view>
+</view>

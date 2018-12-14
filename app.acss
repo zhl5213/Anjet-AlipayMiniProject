@@ -1,0 +1,15 @@
+page {
+  flex: 1;
+  display: flex;
+  background: white;
+}
+
+.page {
+  padding: 10rpx;
+  flex: 1;
+  width: 100%;
+}
+
+.textCenter{
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+.myInfo {
+  line-height:42.5px;
+  height:50%;
+  font-size:17px;
+  color:white;
+}
+
+.cardContainer{
+  background-color: white;
+  border-radius: 8px;
+}
