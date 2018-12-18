@@ -4,7 +4,7 @@ Page({
     leftButtonViewClassName:"buttonViewLeft",
     rightButtonViewClassName:"buttonViewRight",
     deviceNumber:""
-  },
+    },
 
   onLoad(options) {
     if (options.deviceNumber) {
@@ -12,6 +12,10 @@ Page({
         deviceNumber: options.deviceNumber
       })
     }
+  },
+
+  onUnload() {
+    
   },
 
   rightButtonTapped(){
@@ -80,10 +84,13 @@ Page({
                       sign:10086,
                     },
                     success: (res) => {
-                      console.log("open Device success,res",res);                  
+                      
                     },
                     complete: function(res) {
-                      console.log("open Device complete,res", res);                  
+                      console.log("open Device complete,res", res);   
+                      let app = getApp();
+                      app.openDeviceSuccess = true;
+                      console.log("open Device success,app.openDeviceSuccess = ", app.openDeviceSuccess);                
                     },
                     fail: function(res) {
                       console.log("open Device fail,res", res); 
@@ -95,10 +102,12 @@ Page({
           },
           fail: function(res) {
             my.alert({ content: '获取支付订单失败' });
+            console.log("get tradeNo 失败,res", res);                  
           },
           complete: function(res) {
             // my.alert({ content: 'complete' });
             my.hideLoading();
+            console.log("get tradeNo 完成,res", res);                  
           }
         });
       }

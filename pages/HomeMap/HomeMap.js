@@ -17,6 +17,18 @@ Page({
     markers: [],
   },
 
+ onshow(){
+   let app = getApp();
+   if (app.openDeviceSuccess){
+     this.setData({
+       "controls[2].iconPath": "/resources/HomeMap/chargeNow.png"
+     })
+   }else{
+     this.setData({
+       "controls[2].iconPath": "/resources/HomeMap/scanToCharge.png"
+     })
+   }
+ },
 
   onLoad() {
     this.setData({

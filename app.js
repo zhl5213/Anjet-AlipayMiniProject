@@ -3,6 +3,7 @@ App({
     windowHeight: 667,
     screenRatio: 1,
     isIphoneXSerial:false,
+    openDeviceSuccess:false,
 
   onLaunch(options) {
     // 第一次打开
