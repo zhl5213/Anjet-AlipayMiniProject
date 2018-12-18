@@ -17,7 +17,8 @@ Page({
     markers: [],
   },
 
- onshow(){
+  onShow(){
+   console.log('home page map onshow');
    let app = getApp();
    if (app.openDeviceSuccess){
      this.setData({
@@ -212,40 +213,83 @@ Page({
         my.navigateTo({ url: '/pages/commonUserQuestions/commonUserQuestions' });
       } else if (e.controlId === 3) {
         console.log(' scan quardcode is tapeed');
-        my.scan({
-          type: 'qr',
-          success: (res) => {
-            // my.alert({ title: res.code });
-            let prefixStr = "https://anjet-tech.com/ezchargeAppDownload.php?no=";
-            let prefixStrForG2 = "https://anjet-tech.com/ezchargeAppDownload.php?g2=";
-            var arr = [];
-            if (res.code.startsWith(prefixStr)) {
-              arr = res.code.split(prefixStr); 
-            } else if (res.code.startsWith(prefixStrForG2)){
-              arr = res.code.split(prefixStrForG2); 
-            };
-            if (arr.length>1){
-              if (arr[1].length > 1) {
-                let deviceNumber = arr[1];
-                my.navigateTo({ url: '/pages/PayToCharge/PayToCharge?deviceNumber='+deviceNumber });
-              }
-            }else{
-              my.showToast({
-                type: 'success',
-                content: '二维码不正确',
-                duration: 2000,
-                success: () => {
-                },
-              });
-            }
-            console.log(' scan quardcode success ,res', res);
+        let app = getApp();
+        var that = this;
+        if (app.openDeviceSuccess) {
+          my.confirm({
+            title: '提示',
+            content: '正在充电中，是否需要结束设备充电',
+            confirmButtonText: '确认',
+            cancelButtonText: '取消',
+            success: (res) => {
+              if (res.confirm){
+                my.showLoading({
+                  success: (res) => {
+                  },
+                });
+                my.httpRequest({
+                  url: 'http://192.168.0.196/api/xcx/openDevice.php?', // 目标服务器url
+                  data: {
+                    mac: app.macNumber,
+                    switch: 2,
+                    sign: 10086,
+                  },
+                  success: (res) => {
 
-          },
-          fail: (res) => {
-            // my.alert({ title: '获取二维码失败' });
-            console.log(' scan quardcode fail ,res', res);
-          }
-        });
+                  },
+                  complete: function(res) {
+                    console.log("open Device complete,res", res);
+                    let app = getApp();
+                    app.openDeviceSuccess = false;
+                    console.log("open Device success,app.openDeviceSuccess = ", app.openDeviceSuccess);
+                    my.hideLoading();
+                    that.setData({
+                      "controls[2].iconPath": "/resources/HomeMap/scanToCharge.png"
+                    })
+                  },
+                  fail: function(res) {
+                    console.log("open Device fail,res", res);
+                  },
+                });
+              }
+            },
+          });
+        }else{
+          my.scan({
+            type: 'qr',
+            success: (res) => {
+              // my.alert({ title: res.code });
+              let prefixStr = "https://anjet-tech.com/ezchargeAppDownload.php?no=";
+              let prefixStrForG2 = "https://anjet-tech.com/ezchargeAppDownload.php?g2=";
+              var arr = [];
+              if (res.code.startsWith(prefixStr)) {
+                arr = res.code.split(prefixStr);
+              } else if (res.code.startsWith(prefixStrForG2)) {
+                arr = res.code.split(prefixStrForG2);
+              };
+              if (arr.length > 1) {
+                if (arr[1].length > 1) {
+                  let deviceNumber = arr[1];
+                  my.navigateTo({ url: '/pages/PayToCharge/PayToCharge?deviceNumber=' + deviceNumber });
+                }
+              } else {
+                my.showToast({
+                  type: 'success',
+                  content: '二维码不正确',
+                  duration: 2000,
+                  success: () => {
+                  },
+                });
+              }
+              console.log(' scan quardcode success ,res', res);
+
+            },
+            fail: (res) => {
+              // my.alert({ title: '获取二维码失败' });
+              console.log(' scan quardcode fail ,res', res);
+            }
+          });
+        }
       } else if (e.controlId === 4) {
         console.log('current location is tapped');
         this.mapCtx.moveToLocation();

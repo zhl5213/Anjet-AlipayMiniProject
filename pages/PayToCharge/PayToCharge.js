@@ -14,8 +14,9 @@ Page({
     }
   },
 
-  onUnload() {
-    
+  onShow(){
+    console.log("scan to charge onshow,");
+
   },
 
   rightButtonTapped(){
@@ -90,7 +91,8 @@ Page({
                       console.log("open Device complete,res", res);   
                       let app = getApp();
                       app.openDeviceSuccess = true;
-                      console.log("open Device success,app.openDeviceSuccess = ", app.openDeviceSuccess);                
+                      console.log("open Device success,app.openDeviceSuccess = ", app.openDeviceSuccess);  
+                      app.macNumber = macNumber;             
                     },
                     fail: function(res) {
                       console.log("open Device fail,res", res); 
