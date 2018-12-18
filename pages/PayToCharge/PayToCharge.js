@@ -75,29 +75,42 @@ Page({
               my.tradePay({
                 tradeNO: tradeNo,  
                 success: (res) => {
-                  console.log("trade success,res= macNumber=", JSON.stringify(res), macNumber);    
-                  // 开始打开充电器              
-                  my.httpRequest({
-                    url: 'http://192.168.0.196/api/xcx/openDevice.php?', // 目标服务器url
-                    data:{
-                      mac: macNumber,
-                      switch:1,
-                      sign:10086,
-                    },
-                    success: (res) => {
-                      
-                    },
-                    complete: function(res) {
-                      console.log("open Device complete,res", res);   
-                      let app = getApp();
-                      app.openDeviceSuccess = true;
-                      console.log("open Device success,app.openDeviceSuccess = ", app.openDeviceSuccess);  
-                      app.macNumber = macNumber;             
-                    },
-                    fail: function(res) {
-                      console.log("open Device fail,res", res); 
-                    },
-                  });
+                  // let resultJson = JSON.stringify(res);
+                  console.log("trade success,macNumber= res=", macNumber, res);
+                  if (res.resultCode === "9000"){
+                    console.log("resultJson.resultCode === 9000 " );
+                    // 开始打开充电器 
+                    my.httpRequest({
+                      url: 'http://192.168.0.196/api/xcx/openDevice.php?', // 目标服务器url
+                      data: {
+                        mac: macNumber,
+                        switch: 1,
+                        sign: 10086,
+                      },
+                      success: (res) => {
+
+                      },
+                      complete: function(res) {
+                        console.log("open Device complete,res", res);
+                        let app = getApp();
+                        app.openDeviceSuccess = true;
+                        console.log("open Device success,app.openDeviceSuccess = ", app.openDeviceSuccess);
+                        app.macNumber = macNumber;
+                        my.navigateBack({
+                          delta:2
+                        });
+                      },
+                      fail: function(res) {
+                        console.log("open Device fail,res", res);
+                      },
+                    });
+                  }
+                },
+                fail: function(res) {
+                  console.log("tradePay 失败,res", res);
+                },
+                complete: function(res) {
+                  console.log("tradePay complete,res", res);
                 },
               });
             }
