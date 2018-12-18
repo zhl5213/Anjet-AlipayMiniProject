@@ -39,7 +39,9 @@ Page({
       },
     ],
   },
-  onLoad() {},
+  onLoad() {
+    
+  },
 
   contactPhoneIsTapped(){
     my.makePhoneCall({ number:'700-8569-2324'})

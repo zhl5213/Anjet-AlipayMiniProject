@@ -1,0 +1,30 @@
+.commonFlexRow {
+  padding-left: 22.5px;
+  padding-right: 22.5px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content:  space-between;
+  align-items:center;
+}
+
+.orderResult{
+  padding-top:20px;
+  padding-bottom: 20px;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+.whiteBG {
+  background-color: white
+}
+
+.refundDetailView {
+color: #51aef4;
+text-align:center;
+}
+
+.orderText{
+  margin-top:10px;
+  margin-bottom:10px;
+}

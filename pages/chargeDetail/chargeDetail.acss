@@ -1,0 +1,56 @@
+.commonFlexRow {
+  padding-left: 22.5px;
+  padding-right: 22.5px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content:  space-between;
+  align-items:center;
+}
+
+.orderResult{
+  padding-top:20px;
+  padding-bottom: 20px;
+  line-height: 30px;
+}
+
+#addressView{
+  padding-left: 22.5px;
+  padding-right: 22.5px;
+  padding-top:15px;
+  padding-bottom: 7.5px;
+}
+
+#addressText{
+  display:inline-block;
+  vertical-align:top;
+  padding-left: 10px;
+}
+
+.whiteBG {
+  background-color: white
+}
+
+
+.refundDetailView {
+white-space:pre;
+border-radius:8px;
+color: #51aef4;
+border:#51aef4 solid;
+border-width: 1px;
+text-align:center;
+}
+
+.grayColorText{
+  color:#999999;
+  font-size:13px;
+}
+
+.leftAlign{
+  padding-left: 22.5px;
+}
+
+.orderText{
+  margin-top:10px;
+  margin-bottom:10px;
+}

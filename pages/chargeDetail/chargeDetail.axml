@@ -1,0 +1,28 @@
+<view class="grayPageView">
+  <view a:if="{{record.orderCompletion === '订单完成'}}" class="whiteBG orderResult commonFlexRow">
+    <view >订单完成！期待您的再次使用。</view>
+  </view>
+  <view  a:else class="whiteBG orderResult commonFlexRow">
+    <view >订单已取消。</view>
+    <view class="refundDetailView"> <text decode="{{true}}" onTap="refundDetailTapped">&ensp;退款详情&ensp;</text></view>
+  </view>
+  <view class="whiteBG" style="margin-top:12.5px;">
+    <view id="addressView">
+      <image style="width:80px;height:80px;board-radius:8px;" src="/resources/public/defaultStoreAvatur.png" mode="aspectFit" />
+      <view id="addressText">
+        <view style="font-size:14px;margin-top:10px;">{{record.location}}</view>
+        <view style="margin-top:20px;" class="grayColorText">{{record.address}}</view>
+      </view>
+    </view>
+    <block  a:for="{{orderDetailTitle}}">
+      <view class="commonFlexRow whiteBG" style="margin-top:12.5px;padding-bottom:12.5px;margin-bottom:12.5px;font-size:14px;">
+        <view>{{item}}：</view>
+        <view>{{record[item]}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="whiteBG" style="margin-top:12.5px; padding-top:10px;  padding-bottom:10px;">
+    <view class="grayColorText commonFlexRow orderText">订单编号：{{record.orderNumber}}</view>
+    <view class="grayColorText commonFlexRow orderText">支付时间：{{record.payTime}}</view>
+  </view>
+</view>

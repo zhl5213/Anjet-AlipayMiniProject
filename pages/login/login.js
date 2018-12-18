@@ -16,6 +16,20 @@ Page({
       scopes: 'auth_base',
       success: (res) => {
         console.log(' getAuthCode success', res)
+        // my.httpRequest({
+        //   url: 'http://192.168.0.196/api/xcx/userRegisterOpenIDApi.php?', // 目标服务器url
+        //   data:{
+        //     openid: res.authCode,
+        //     opentpye:"alipay",
+        //     sign:10086,
+        //   },
+        //   success: (res) => {
+            
+        //   },
+        //   complete: (res) => {
+
+        //   },
+        // });
         my.setStorageSync({
           key: 'userID', // 缓存数据的key
           data: '2090', // 要缓存的数据

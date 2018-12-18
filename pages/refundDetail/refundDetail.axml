@@ -1,0 +1,14 @@
+<view class="grayPageView">
+  <view  class="whiteBG orderResult commonFlexRow">
+    <view >退款状态：</view>
+    <view class="refundDetailView"> 退款成功</view>
+  </view>
+  <view class="whiteBG" style="margin-top:12.5px;padding-top:20px;padding-bottom:7.5px">
+    <block  a:for="{{orderDetailTitle}}">
+      <view class="commonFlexRow whiteBG" style="margin-top:12.5px;padding-bottom:12.5px;margin-bottom:12.5px;font-size:14px;">
+        <view>{{item}}：</view>
+        <view>{{orderDetail[item]}}</view>
+      </view>
+    </block>
+  </view>
+</view>

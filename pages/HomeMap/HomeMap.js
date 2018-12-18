@@ -175,6 +175,22 @@ Page({
           //   key: 'userID', // 缓存数据的key
           // });
           console.log('userID has stored');
+          // my.getAuthCode({
+          //   scopes: 'auth_base',
+          //   success: (res) => {
+          //     my.httpRequest({
+          //       url: 'http://192.168.0.196/api/xcx/userLoginOpenIDApi.php?', // 目标服务器url
+          //       data: {
+          //         openid:res.authCode,
+          //         opentype:0,
+          //         sign:10086,
+          //       },
+          //       success: (res) => {
+
+          //       },
+          //     });
+          //   },
+          // });
           my.navigateTo({ url: '/pages/myAccount/myAccount?phoneNumber=12345678' });
         }else{
           my.navigateTo({ url: '/pages/login/login' });
@@ -198,9 +214,20 @@ Page({
             };
             if (arr.length>1){
               if (arr[1].length > 1) {
-                my.navigateTo({ url: '/pages/PayToCharge/PayToCharge' });
+                let deviceNumber = arr[1];
+                my.navigateTo({ url: '/pages/PayToCharge/PayToCharge?deviceNumber='+deviceNumber });
               }
+            }else{
+              my.showToast({
+                type: 'success',
+                content: '二维码不正确',
+                duration: 2000,
+                success: () => {
+                },
+              });
             }
+            console.log(' scan quardcode success ,res', res);
+
           },
           fail: (res) => {
             // my.alert({ title: '获取二维码失败' });

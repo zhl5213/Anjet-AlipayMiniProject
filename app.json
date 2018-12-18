@@ -8,6 +8,8 @@
     "pages/myAccount/myAccount",
     "pages/myChargeRecord/myChargeRecord",
     "pages/coupon/coupon",
-    "pages/useProtocol/useProtocol"
+    "pages/useProtocol/useProtocol",
+    "pages/chargeDetail/chargeDetail",
+    "pages/refundDetail/refundDetail"
   ]
 }

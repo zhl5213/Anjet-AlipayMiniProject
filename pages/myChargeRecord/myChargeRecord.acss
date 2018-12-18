@@ -1,1 +1,44 @@
-/* required by usingComponents */
+.topView{
+  display: flex;
+  flex-direction: row;
+  justify-content:  space-between;
+  align-items:center;
+}
+
+.chargeTime{
+  margin-top: 10px;
+  color:gray;
+  font-size: 13px;
+}
+
+.lineView{
+  margin-top: 10px;
+  margin-bottom: 15px;
+  background-color: #f0eff5;
+  height: 1px;
+  width: 100%;
+}
+
+.bottomView {
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content:  space-between;
+  align-items:center;
+}
+
+.spaceView{
+background-color: #f0eff5;
+height: 12.5px;
+width: 100%;
+}
+
+.refundDetailView {
+white-space:pre;
+border-radius:8px;
+color: #51aef4;
+border:#51aef4 solid;
+border-width: 1px;
+text-align:center;
+}
+

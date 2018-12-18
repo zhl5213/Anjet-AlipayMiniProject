@@ -1,4 +1,5 @@
 <view class="backView" style="background-color:#f0eff5;">
+  <view style="height:45px;line-height:45px;background-color:#f0eff5;font-size:14;margin-left: 22.5px;">当前设备编号：{{deviceNumber}}</view>
   <view style="background-color:white;">
     <view class="explain text" style="margin-left: 22.5px;margin-right: 22.5px;line-height:20px">
     <text style="font-size:16px;word-wrap:break-word;">请选择下列充电套餐进行购买。      
@@ -23,7 +24,7 @@
      </view>
   </view>
   <view style="margin-left: 22.5px; margin-top: 15px">应付金额：<text style="color: #51aef4;font-size:20px;"> ¥{{chooseAmount}}元</text></view>
-  <view class="sureButton">
+  <view class="sureButton" hover-class="btTappedState" onTap="payButtonTapped">
     立即支付
   </view>
 </view>  

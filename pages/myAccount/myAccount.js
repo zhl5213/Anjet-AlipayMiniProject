@@ -2,7 +2,7 @@ Page({
   data: {
     bgColor: "#238CEE",
     phoneNumber:"",
-    avarturRadius:80,
+    avarturRadius:70,
     cardGroup1:[{
       thumb : "/resources/myAccount/myChargeRecord.png",
       title : "我的充电订单"

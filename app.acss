@@ -13,3 +13,8 @@ page {
 .textCenter{
   text-align: center;
 }
+
+.grayPageView {
+  background-color: #f0eff5;
+  width: 100%;
+}
