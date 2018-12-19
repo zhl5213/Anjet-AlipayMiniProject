@@ -17,7 +17,7 @@ Page({
       success: (res) => {
         console.log(' getAuthCode success', res)
         // my.httpRequest({
-        //   url: 'http://192.168.0.196/api/xcx/userRegisterOpenIDApi.php?', // 目标服务器url
+        //   url: 'http://192.168.1.19/api/xcx/userRegisterOpenIDApi.php?', // 目标服务器url
         //   data:{
         //     openid: res.authCode,
         //     opentpye:"alipay",

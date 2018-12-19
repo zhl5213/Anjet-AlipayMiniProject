@@ -31,6 +31,7 @@ Page({
    }
  },
 
+
   onLoad() {
     this.setData({
     markers: [{
@@ -78,8 +79,9 @@ Page({
       },
     });
 
+
     my.httpRequest({
-      url: 'http://192.168.0.196/api/xcx/shopListApi.php?shid=0&sign=10086',
+      url: 'http://192.168.1.19/api/xcx/shopListApi.php?shid=0&sign=10086',
       method: 'get',
       dataType: 'json',
       success: function(res) {
@@ -117,6 +119,7 @@ Page({
         // my.alert({ content: 'complete' });
       }
     });
+  
     
     my.getSystemInfo({
       success: (res) => {
@@ -192,7 +195,7 @@ Page({
           //   scopes: 'auth_base',
           //   success: (res) => {
           //     my.httpRequest({
-          //       url: 'http://192.168.0.196/api/xcx/userLoginOpenIDApi.php?', // 目标服务器url
+          //       url: 'http://192.168.1.19/api/xcx/userLoginOpenIDApi.php?', // 目标服务器url
           //       data: {
           //         openid:res.authCode,
           //         opentype:0,
@@ -228,7 +231,7 @@ Page({
                   },
                 });
                 my.httpRequest({
-                  url: 'http://192.168.0.196/api/xcx/openDevice.php?', // 目标服务器url
+                  url: 'http://192.168.1.19/api/xcx/openDevice.php?', // 目标服务器url
                   data: {
                     mac: app.macNumber,
                     switch: 2,

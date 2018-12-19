@@ -56,7 +56,7 @@ Page({
         });
         // 开始根据授权码要求服务端发送交易订单
         my.httpRequest({
-          url: 'http://192.168.0.196/api/xcx/alipay.php?',
+          url: 'http://192.168.1.19/api/xcx/alipay.php?',
           method: 'get',
           data: {
             uid: 693,
@@ -81,7 +81,7 @@ Page({
                     console.log("resultJson.resultCode === 9000 " );
                     // 开始打开充电器 
                     my.httpRequest({
-                      url: 'http://192.168.0.196/api/xcx/openDevice.php?', // 目标服务器url
+                      url: 'http://192.168.1.19/api/xcx/openDevice.php?', // 目标服务器url
                       data: {
                         mac: macNumber,
                         switch: 1,
